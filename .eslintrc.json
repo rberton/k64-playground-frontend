@@ -1,0 +1,69 @@
+{
+  "env": {
+    "browser": true,
+    "jest": true,
+    "es6": true
+  },
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "import",
+    "jest",
+    "jsx-a11y",
+    "prettier",
+    "react",
+    "react-hooks",
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:jest/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "settings": {
+    "import/extensions": [".ts", ".tsx"],
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts", ".tsx"]
+      }
+    }
+  },
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
+    "react/jsx-props-no-spreading": "warn",
+    "import/no-unresolved": 0,
+    "no-unused-vars": "warn",
+    "no-console": "warn",
+    "no-shadow": "warn",
+    "no-param-reassign": "warn",
+    "import/prefer-default-export": "off",
+    "import/no-default-export": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": false,
+        "tabWidth": 2,
+        "trailingComma": "es5"
+      }
+    ],
+    "jest/consistent-test-it": ["error", { "fn": "it" }]
+  }
+}

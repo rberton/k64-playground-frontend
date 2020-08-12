@@ -1,0 +1,111 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "keywords": [
+    "NextJS",
+    "GraphQL",
+    "Apollo",
+    "TypeScript",
+    "PWA",
+    "SASS"
+  ],
+  "author": "Romain Berton <romain.berton.dev@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rberton/k64-init.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rberton/k64-init/issues"
+  },
+  "homepage": "https://github.com/rberton/k64-init#readme",
+  "license": "MIT",
+  "scripts": {
+    "prettier": "prettier './**/*.{js,ts,tsx,css,scss}' --write",
+    "lint": "eslint './**/*.{ts,tsx}'",
+    "test": "NODE_ENV=test PORT=3001 jest",
+    "dev": "next dev",
+    "build": "next build",
+    "prestart": "yarn build",
+    "start": "NODE_ENV=production next start -p 3002",
+    "pre-commit": "yarn prettier && yarn lint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn pre-commit"
+    }
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "<rootDir>/tsconfig.tests.json"
+      }
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(css|less|scss)$": "identity-obj-proxy"
+    }
+  },
+  "dependencies": {
+    "@apollo/client": "^3.0.2",
+    "@apollo/react-components": "^4.0.0",
+    "@apollo/react-hooks": "^4.0.0",
+    "@material-ui/core": "^4.11.0",
+    "@zeit/next-sass": "^1.0.1",
+    "apollo-cache-inmemory": "^1.6.6",
+    "apollo-client": "^2.6.10",
+    "apollo-link": "^1.2.14",
+    "apollo-link-http": "^1.5.17",
+    "apollo-link-ws": "^1.0.20",
+    "apollo-utilities": "^1.3.4",
+    "graphql": "^15.3.0",
+    "graphql-tag": "^2.10.4",
+    "isomorphic-unfetch": "^3.0.0",
+    "js-cookie": "^2.2.1",
+    "next": "9.4.4",
+    "next-pwa": "^3.0.3",
+    "next-with-apollo": "^5.1.0",
+    "node-sass": "^4.14.1",
+    "prop-types": "^15.7.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "subscriptions-transport-ws": "^0.9.17"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.5",
+    "@types/node": "^14.0.23",
+    "@types/react": "^16.9.43",
+    "@types/react-test-renderer": "^16.9.2",
+    "@typescript-eslint/eslint-plugin": "^3.6.1",
+    "@typescript-eslint/parser": "^3.6.1",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.18.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "husky": "^4.2.5",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.1.0",
+    "prettier": "^2.0.5",
+    "react-test-renderer": "^16.13.1",
+    "ts-jest": "^26.1.3",
+    "typescript": "^3.9.7"
+  }
+}
